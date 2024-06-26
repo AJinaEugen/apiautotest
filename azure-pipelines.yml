@@ -25,9 +25,11 @@ steps:
     npm run npm-auth
     npm run npmgetToken
     npm installPackages
-    npm publishArtifact
 
-
+    - task: Npm@1
+      inputs:
+        command: 'install'
+        command: 'publish' 
 
 
   displayName: 'Run a multi-line script'
