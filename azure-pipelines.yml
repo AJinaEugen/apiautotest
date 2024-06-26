@@ -24,7 +24,7 @@ steps:
     npm install -g newman
     npm run npm-auth
     npm run npmgetToken
-    npm installPackages
+  
 
     - task: Npm@1
       inputs:
