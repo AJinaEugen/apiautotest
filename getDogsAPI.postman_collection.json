@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "5926dd7d-6907-4d2f-9a63-f2673aa3e27b",
+		"name": "getDogsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18754822"
+	},
+	"item": [
+		{
+			"name": "getAllBreeds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Response status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Validate the presence of 'message' object in the response schema\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData).to.have.property('message');\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Message object contains all expected breed keys\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    \r",
+							"    pm.expect(responseData.message).to.be.an('object');\r",
+							"    const expectedBreeds = [\r",
+							"        \"affenpinscher\", \"african\", \"airedale\", \"akita\", \"appenzeller\", \"australian\",\r",
+							"        \"bakharwal\", \"basenji\", \"beagle\", \"bluetick\", \"borzoi\", \"bouvier\", \"boxer\",\r",
+							"        \"brabancon\", \"briard\", \"buhund\", \"bulldog\", \"bullterrier\", \"cattledog\", \"cavapoo\",\r",
+							"        \"chihuahua\", \"chippiparai\", \"chow\", \"clumber\", \"cockapoo\", \"collie\", \"coonhound\",\r",
+							"        \"corgi\", \"cotondetulear\", \"dachshund\", \"dalmatian\", \"dane\", \"danish\", \"deerhound\",\r",
+							"        \"dhole\", \"dingo\", \"doberman\", \"elkhound\", \"entlebucher\", \"eskimo\", \"finnish\",\r",
+							"        \"frise\", \"gaddi\", \"germanshepherd\", \"greyhound\", \"groenendael\", \"havanese\", \"hound\",\r",
+							"        \"husky\", \"keeshond\", \"kelpie\", \"kombai\", \"komondor\", \"kuvasz\", \"labradoodle\", \"labrador\",\r",
+							"        \"leonberg\", \"lhasa\", \"malamute\", \"malinois\", \"maltese\", \"mastiff\", \"mexicanhairless\", \"mix\",\r",
+							"        \"mountain\", \"mudhol\", \"newfoundland\", \"otterhound\", \"ovcharka\", \"papillon\", \"pariah\", \"pekinese\",\r",
+							"        \"pembroke\", \"pinscher\", \"pitbull\", \"pointer\", \"pomeranian\", \"poodle\", \"pug\", \"puggle\", \"pyrenees\",\r",
+							"        \"rajapalayam\", \"redbone\", \"retriever\", \"ridgeback\", \"rottweiler\", \"saluki\", \"samoyed\", \"schipperke\",\r",
+							"        \"schnauzer\", \"segugio\", \"setter\", \"sharpei\", \"sheepdog\", \"shiba\", \"shihtzu\", \"spaniel\", \"spitz\",\r",
+							"        \"springer\", \"stbernard\", \"terrier\", \"tervuren\", \"vizsla\", \"waterdog\", \"weimaraner\", \"whippet\", \"wolfhound\"\r",
+							"    ];\r",
+							"    \r",
+							"    expectedBreeds.forEach(breed => {\r",
+							"        pm.expect(responseData.message).to.have.property(breed);\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://dog.ceo/api/breeds/list/all",
+					"protocol": "https",
+					"host": [
+						"dog",
+						"ceo"
+					],
+					"path": [
+						"api",
+						"breeds",
+						"list",
+						"all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
