@@ -23,9 +23,5 @@ steps:
     echo See https://aka.ms/yaml
     npm install -g newman
     newman run "getDogsAPI.postman_collection.json"
-   
-
-    -
-     
 
   displayName: 'Run a multi-line script'
