@@ -22,14 +22,10 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
     npm install -g newman
-    npm run npm-auth
-    npm run npmgetToken
-  
+    npm run newman "getDogsAPI.postman_collection.json"
+   
 
-    - task: Npm@1
-      inputs:
-        command: 'install'
-        command: 'publish' 
-
+    -
+     
 
   displayName: 'Run a multi-line script'
