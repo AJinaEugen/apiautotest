@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "npm-auth": "npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false",
+    "newman": "npm install -g vsts-npm-auth --registry https://registry.npmjs.com --always-auth false",
     "npmgetToken": "vsts-npm-auth -config .npmrc",
     "installPackages": "npm install",
     "publishArtifact": "npm publish"
