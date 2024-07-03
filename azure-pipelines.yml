@@ -26,12 +26,8 @@ steps:
 
   displayName: 'Run a multi-line script'
 
-- task: DownloadBuildArtifacts@1
+- task: PublishBuildArtifacts@1
   inputs:
-    buildType: 'specific'
-    project: '4f83f59a-438b-469e-8b43-d8bad022d6f7'
-    pipeline: '3'
-    buildVersionToDownload: 'latest'
-    downloadType: 'single'
-    artifactName: 'test'
-    downloadPath: '$(System.ArtifactsDirectory)'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
